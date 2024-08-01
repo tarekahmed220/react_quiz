@@ -95,17 +95,22 @@ function Main() {
   const numQuestions = questions.length;
   const questionPoints = questions.reduce((curr, acc) => curr + acc.points, 0);
   useEffect(() => {
-    fetch("http://localhost:8000/questions")
-      .then((response) => response.json())
-      .then((data) =>
+    async function fetchQuestions() {
+      try {
+        const response = await fetch(
+          "https://tarekahmed550.github.io/world_wise_data/react-quiz.json"
+        );
+        const data = await response.json();
+        console.log(data.questions);
         dispatch({
           type: "dataReceived",
-          payload: data,
-        })
-      )
-      .catch(() => {
+          payload: data.questions,
+        });
+      } catch (error) {
         dispatch({ type: "error" });
-      });
+      }
+    }
+    fetchQuestions();
   }, []);
   return (
     <div
