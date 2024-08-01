@@ -1,6 +1,5 @@
 function FinishScreen({ points, questionPoints, highScore, dispatch }) {
   const percentage = (points / questionPoints) * 100;
-  console.log(points, percentage);
   let emoji;
   if (percentage === 100) emoji = "🥇";
   if (percentage < 100 && percentage >= 80) emoji = "🎉";

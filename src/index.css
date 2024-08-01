@@ -41,11 +41,20 @@ body {
 }
 
 .app-header {
-  width: 66rem;
+  max-width: 66rem;
   margin-bottom: 4rem;
+  margin-block: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+  }
+  .app-header h1 {
+    font-size: 4rem;
+  }
 }
 
 .error {
@@ -99,6 +108,15 @@ h4 {
   font-size: 1.8rem;
   color: var(--color-medium);
 }
+@media (max-width: 768px) {
+  .progress {
+    gap: 1rem;
+    column-gap: 14rem;
+  }
+  .progress p {
+    width: 72px;
+  }
+}
 
 progress {
   -webkit-appearance: none;
@@ -127,6 +145,7 @@ progress {
   cursor: pointer;
   border-radius: 100px;
   transition: 0.3s;
+  margin-top: 5px;
 }
 
 .btn:not([disabled]):hover {

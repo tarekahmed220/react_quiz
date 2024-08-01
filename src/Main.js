@@ -101,7 +101,6 @@ function Main() {
           "https://tarekahmed550.github.io/world_wise_data/react-quiz.json"
         );
         const data = await response.json();
-        console.log(data.questions);
         dispatch({
           type: "dataReceived",
           payload: data.questions,

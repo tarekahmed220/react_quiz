@@ -8,7 +8,7 @@ function Progress({ index, numQuestions, answer, questionPoints, points }) {
       <p>
         Question <strong>{index + 1}</strong> / {numQuestions}
       </p>
-      <p>
+      <p className="points">
         {" "}
         <strong>{points}</strong> / {questionPoints} Points
       </p>
